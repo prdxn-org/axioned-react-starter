@@ -5,4 +5,5 @@ import { configureStore } from '@reduxjs/toolkit';
 
 export const store = configureStore({
   /* add your reducer here */
+  reducer: {},
 });
