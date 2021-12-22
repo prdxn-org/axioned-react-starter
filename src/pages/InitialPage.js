@@ -1,4 +1,4 @@
-import Test from '../components/test/index';
+import Test from '../components/Test/Index';
 
 function InitialPage() {
   return ( 

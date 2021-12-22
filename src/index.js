@@ -4,7 +4,7 @@ import { store } from './store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 
-import InitialPage from './pages';
+import InitialPage from './pages/InitialPage';
 
 ReactDOM.render(
   <React.StrictMode>
