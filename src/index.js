@@ -1,11 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom'; 
+import ReactDOM from 'react-dom';
+import { store } from './store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider>
+    <Provider store={store}>
       <h1>Hello React</h1>
     </Provider>
   </React.StrictMode>,
