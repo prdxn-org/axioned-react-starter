@@ -4,10 +4,12 @@ import { store } from './store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 
+import InitialPage from './pages';
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <h1>Hello React</h1>
+      <InitialPage />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
