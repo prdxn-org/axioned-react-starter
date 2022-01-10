@@ -4,6 +4,7 @@ aggregates all routes together for easy access. */
 import { configureStore } from "@reduxjs/toolkit";
 
 const store = configureStore({
-  /* add your reducer here */ reducer: {},
+  /* add your reducer here */
+  reducer: {},
 });
 export default store;
