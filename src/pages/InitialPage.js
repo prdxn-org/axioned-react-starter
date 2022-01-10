@@ -1,7 +1,8 @@
-import Link from "../components/Test/Link";
+import React from "react";
+import Index from "../components/Test/Index";
 
 function InitialPage() {
-  return <Link />;
+  return <Index />;
 }
 
 export default InitialPage;
