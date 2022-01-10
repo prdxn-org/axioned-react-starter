@@ -1,9 +1,7 @@
-import Test from '../components/Test/Index';
+import Link from "../components/Test/Link";
 
 function InitialPage() {
-  return ( 
-    <Test />
-   );
+  return <Link />;
 }
 
 export default InitialPage;
