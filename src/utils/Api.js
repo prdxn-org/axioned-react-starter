@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Need define API URL in constants or .env
-const API_URL = "";
+const API_URL = process.env.REACT_APP_API_END_POINT;
 
 let axiosInstance = axios.create({
   baseURL: API_URL,

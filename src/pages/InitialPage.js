@@ -1,9 +1,8 @@
-import Test from '../components/Test/Index';
+import React from "react";
+import Index from "../components/Test/Index";
 
 function InitialPage() {
-  return ( 
-    <Test />
-   );
+  return <Index />;
 }
 
 export default InitialPage;
