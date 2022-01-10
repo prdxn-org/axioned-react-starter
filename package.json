@@ -27,7 +27,8 @@
     "start:staging": "env-cmd -f ./environments/.staging.env react-scripts start",
     "build:staging": "env-cmd -f ./environments/.staging.env npm run-script build",
     "start:prod": "env-cmd -f ./environments/.prod.env react-scripts start",
-    "build:prod": "env-cmd -f ./environments/.prod.env npm run-script build"
+    "build:prod": "env-cmd -f ./environments/.prod.env npm run-script build",
+    "post-merge": "./.husky/post-merge"
   },
   "eslintConfig": {
     "extends": "react-app"
