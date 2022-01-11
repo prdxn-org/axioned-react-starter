@@ -21,7 +21,7 @@ const getHeaders = () => {
   };
 };
 
-export const post = (url, data, headers = true) => {
+export const _post = (url, data, headers = true) => {
   configAxios();
   return axiosInstance({
     method: "POST",
@@ -32,7 +32,7 @@ export const post = (url, data, headers = true) => {
 };
 
 // delete is a reserved name
-export const del = (url) => {
+export const _delete = (url) => {
   configAxios();
   return axiosInstance({
     method: "DELETE",
@@ -41,7 +41,7 @@ export const del = (url) => {
   });
 };
 
-export const get = (url) => {
+export const _get = (url) => {
   updateAxios();
   const { data } = await axiosInstance({
     method: "GET",
@@ -51,7 +51,7 @@ export const get = (url) => {
   return data;
 };
 
-export const patch = (url, data) => {
+export const _patch = (url, data) => {
   configAxios();
   return axiosInstance({
     method: "PATCH",
