@@ -21,13 +21,13 @@ const getHeaders = () => {
   };
 };
 
-export const _post = (url, data, headers = true) => {
+export const _post = (url, data, headers = getHeaders()) => {
   configAxios();
   return axiosInstance({
     method: "POST",
     url,
     data,
-    headers: headers ? getHeaders() : {},
+    headers: { ...headers, ...getHeaders() },
   });
 };
 
