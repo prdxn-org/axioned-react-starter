@@ -1,62 +1,54 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable arrow-body-style */
+
 import axios from "axios";
 
 // Need define API URL in constants or .env
 const API_URL = process.env.REACT_APP_API_END_POINT;
 
-let axiosInstance = axios.create({
-  baseURL: API_URL,
-});
+const axiosInstance = axios.create();
 
-const configAxios = () => {
-  axiosInstance = axios.create({
-    baseURL: API_URL,
-  });
-};
+axiosInstance.defaults.baseURL = API_URL;
 
-const getHeaders = () => {
-  // const token = 'Token get from Store'
-  return {
-    // Authorization: token && `Token ${token}`,
-    "Content-Type": "application/json",
-  };
-};
+axiosInstance.interceptors.request.use((request) => {
+  request.headers["Content-Type"] = "application/json";
+  return request;
+}, null);
 
-export const _post = (url, data, headers = getHeaders()) => {
-  configAxios();
-  return axiosInstance({
-    method: "POST",
-    url,
-    data,
-    headers: { ...headers, ...getHeaders() },
+axiosInstance.interceptors.response.use(
+  (response) => {
+    const { data } = response;
+    return data;
+  },
+  (error) => {
+    if (error.response && error.response.data) {
+      return Promise.reject(error.response.data);
+    }
+    return Promise.reject(error.message);
+  }
+);
+
+export const _post = (url, payload) => {
+  return axiosInstance.post(`/${url}`, payload).then((response) => {
+    return response;
   });
 };
 
 // delete is a reserved name
 export const _delete = (url) => {
-  configAxios();
-  return axiosInstance({
-    method: "DELETE",
-    url,
-    headers: getHeaders(),
+  return axiosInstance.delete(`/${url}`).then((response) => {
+    return response;
   });
 };
 
 export const _get = (url) => {
-  updateAxios();
-  const { data } = await axiosInstance({
-    method: "GET",
-    url,
-    headers: getHeaders(),
+  return axiosInstance.get(`/${url}`).then((response) => {
+    return response;
   });
-  return data;
 };
 
-export const _patch = (url, data) => {
-  configAxios();
-  return axiosInstance({
-    method: "PATCH",
-    url,
-    data,
-    headers: getHeaders(),
+export const _patch = (url, payload) => {
+  return axiosClient.patch(`/${url}`, payload).then((response) => {
+    return response;
   });
 };
