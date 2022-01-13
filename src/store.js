@@ -1,9 +1,15 @@
-/* store.js is simply the Redux store and the routes.js 
+/* eslint-disable arrow-body-style */
+
+/* store.js is simply the Redux store and the routes.js
 aggregates all routes together for easy access. */
+import { createStore, combineReducers, applyMiddleware } from "redux";
 
-import { configureStore } from "@reduxjs/toolkit";
+import thunk from "redux-thunk";
 
-const store = configureStore({
-  /* add your reducer here */ reducer: {},
-});
-export default store;
+const rootReducer = combineReducers();
+
+const configureStore = () => {
+  return createStore(rootReducer, applyMiddleware(thunk));
+};
+
+export default configureStore;
