@@ -1,6 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## Getting Started :
 
-## Available Scripts
+* Change node & npm version with require version of the project.
+* Run npm install to install project dependencies.
+* Add require vs code extensions as below.
+    * SonarLint
+    * Prettier - Code formatter
+    * GitLens — Git supercharged
+    * Git History
+* Follow commitlint rules helps your team adhering to a commit convention. (Refer: commitlint.config.js file)
+
+## Learn More About Folder Structure :
+```
+└── src
+    ├── api
+    │   └── apiHandler.js
+    ├── components
+    │   └── Test
+    |         └── index.js
+    ├── pages
+    │   └── InitialPage.js
+    ├── index.js
+    ├── reducers
+    │   └── index.js
+    ├── routes.js
+    ├── store.js
+    └── utils
+        └── index.js
+```
+
+## Available Scripts :
 
 In the project directory, you can run:
 
@@ -12,7 +40,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm run test`
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
@@ -37,8 +65,22 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### `npm run start:dev`
+Runs the app in the local mode.<br />
+app run with development environment.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `npm run start:staging`
+Runs the app in the local mode.<br />
+app run with staging environment.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `npm run start:prod`
+Runs the app in the local mode.<br />
+app run with production environment.
+
+## Learn More About environments Structure :
+```
+└── environments
+    ├── create ".dev.env" name file & add your development variables in this file.
+    ├── create ".prod.env" name file & add your production variables in this file.
+    ├── create ".staging.env" name file & add your staging variables in this file.
+```
